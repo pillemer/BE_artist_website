@@ -1,11 +1,10 @@
 const express = require('express');
+const path = require('path');
 const app = express();
 
 const PORT = 30001;
 
-// app.get('/', (req, res) => {
-//     res.send('Hello, this is the homepage!');
-//   });
+app.use(express.static(path.join(__dirname, 'client', 'public')));
   
 app.get('/api', (req, res) => {
     // Implement logic to fetch artworks from the database
